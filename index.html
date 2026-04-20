@@ -540,6 +540,49 @@
 <script src="js/main.js"></script>
 <script src="js/map.js"></script>
 
+<script>
+// ── WHATSAPP FORM SUBMISSION ──────────────────
+document.getElementById('quote-form').querySelector('.form-submit').addEventListener('click', function(e) {
+  e.preventDefault();
+
+  var form    = document.getElementById('quote-form');
+  var name    = form.querySelector('input[placeholder="Your full name"]').value.trim();
+  var company = form.querySelector('input[placeholder="Your company"]').value.trim();
+  var selects = form.querySelectorAll('select');
+  var country = selects[0].value.trim();
+  var product = selects[1].value.trim();
+  var message = form.querySelector('textarea').value.trim();
+
+  if (!name || !company || !country || !product) {
+    alert('Please fill in all required fields before submitting.');
+    return;
+  }
+
+  var text = 'New Quote Request from Keromi Soles Website:\n\n'
+    + 'Name: ' + name + '\n'
+    + 'Company: ' + company + '\n'
+    + 'Country: ' + country + '\n'
+    + 'Product Interest: ' + product + '\n'
+    + 'Message: ' + (message || 'N/A');
+
+  var encodedMessage = encodeURIComponent(text);
+
+  // Show brief success message then redirect
+  var successMsg = document.getElementById('wa-inline-success');
+  if (!successMsg) {
+    successMsg = document.createElement('p');
+    successMsg.id = 'wa-inline-success';
+    successMsg.style.cssText = 'margin-top:12px; color:#25d366; font-weight:600; font-size:0.92rem; text-align:center;';
+    this.parentNode.insertBefore(successMsg, this.nextSibling);
+  }
+  successMsg.textContent = 'Thank you! Redirecting to WhatsApp with your enquiry…';
+
+  setTimeout(function() {
+    window.location.href = 'https://wa.me/27810849026?text=' + encodedMessage;
+  }, 800);
+});
+</script>
+
 <template id="__bundler_thumbnail">
   <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
     <rect width="120" height="80" fill="#1b1b24"/>
