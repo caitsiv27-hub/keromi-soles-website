@@ -167,15 +167,47 @@ mobileNav.querySelectorAll('a').forEach(a => {
 (function contactForm() {
   const form = document.getElementById('quote-form');
   if (!form) return;
-  form.addEventListener('submit', e => {
+
+  const submitBtn = form.querySelector('.form-submit');
+
+  submitBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    const btn = form.querySelector('.form-submit');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    setTimeout(() => {
-      form.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    }, 1200);
+
+    // Collect values
+    const name    = form.querySelector('input[placeholder="Your full name"]').value.trim();
+    const company = form.querySelector('input[placeholder="Your company"]').value.trim();
+    const country = form.querySelector('select:nth-of-type(1)') 
+                    ? [...form.querySelectorAll('select')][0].value.trim() : '';
+    const product = [...form.querySelectorAll('select')][1]
+                    ? [...form.querySelectorAll('select')][1].value.trim() : '';
+    const message = form.querySelector('textarea').value.trim();
+
+    if (!name || !company || !country || !product) {
+      alert('Please fill in all required fields before submitting.');
+      return;
+    }
+
+    const text = 
+`New Quote Request from Keromi Soles Website:
+
+Name: ${name}
+Company: ${company}
+Country: ${country}
+Product Interest: ${product}
+Message: ${message || 'N/A'}`;
+
+    const encodedMessage = encodeURIComponent(text);
+    window.open('https://wa.me/27810849026?text=' + encodedMessage, '_blank');
+
+    // Show success message inline (don't hide the form)
+    let successMsg = document.getElementById('wa-inline-success');
+    if (!successMsg) {
+      successMsg = document.createElement('p');
+      successMsg.id = 'wa-inline-success';
+      successMsg.style.cssText = 'margin-top:12px; color:#25d366; font-weight:600; font-size:0.92rem; text-align:center;';
+      submitBtn.parentNode.insertBefore(successMsg, submitBtn.nextSibling);
+    }
+    successMsg.textContent = 'Thank you! WhatsApp is opening with your enquiry.';
   });
 })();
 
