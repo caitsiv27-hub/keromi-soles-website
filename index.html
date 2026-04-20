@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keromi Soles — Premium PVC Soles Across Southern Africa</title>
+  <link rel="stylesheet" href="css/styles.css?v=3" />
+  <!-- D3 + TopoJSON for Africa map -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <img src="uploads/Keromi Soles Logo TRANSPARENT.png" alt="Keromi Soles" />
+    <span>Keromi Soles</span>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#map-section">Coverage</a>
+    <a href="#testimonials">Clients</a>
+    <a href="#contact" class="nav-cta">Request Quote</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile nav -->
+<div id="mobile-nav">
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#map-section">Coverage</a>
+  <a href="#testimonials">Clients</a>
+  <a href="#contact">Request a Quote</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg-image">
+    <img src="uploads/f94dcafe-6f5e-48f6-9ed6-a7ca489309f5.png" alt="" />
+    <div class="hero-bg-overlay"></div>
+  </div>
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Supplying Southern Africa &amp; Beyond
+    </div>
+    <h1 class="hero-title">
+      <span>Step</span><br>
+      <span class="accent">Further.</span><br>
+      <span class="outline">Together.</span>
+    </h1>
+    <p class="hero-tagline">
+      <strong>Premium PVC soles engineered for Africa.</strong>
+      Custom &amp; OEM manufacturing for manufacturers, wholesalers &amp; retailers
+      across South Africa and the entire SADC region.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-pink">Request a Quote</a>
+      <a href="#products" class="btn btn-outline">View Products</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">6+</div>
+        <div class="hero-stat-label">SADC Countries Served</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Custom OEM Capable</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">MOQ</div>
+        <div class="hero-stat-label">Flexible Minimums</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">PVC</div>
+        <div class="hero-stat-label">Premium Grade Material</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════ -->
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <div class="section-label reveal">Who We Are</div>
+      <h2 class="section-title reveal reveal-delay-1">
+        African Roots.<br><em>Global Standards.</em>
+      </h2>
+      <p class="section-sub reveal reveal-delay-2">
+        Keromi Soles is a proudly African B2B supplier of premium PVC and custom/OEM shoe soles.
+        We partner with manufacturers, wholesalers, and retailers across Southern Africa —
+        delivering consistency, quality, and speed at every step.
+      </p>
+
+      <div class="about-values">
+        <div class="value-card reveal reveal-delay-1">
+          <div class="value-icon">⚡</div>
+          <h4>Speed &amp; Efficiency</h4>
+          <p>Fast turnaround, reliable logistics across the SADC region.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-2">
+          <div class="value-icon">🌍</div>
+          <h4>African Pride</h4>
+          <p>Built from Southern Africa. Designed for the continent's needs.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-3">
+          <div class="value-icon">✦</div>
+          <h4>Reliability</h4>
+          <p>Consistent quality and stock availability your business can count on.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-4">
+          <div class="value-icon">◈</div>
+          <h4>Innovation</h4>
+          <p>Full OEM customisation — your brand, your spec, our precision.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-visual reveal">
+      <div class="about-visual-inner">
+        <div class="about-visual-bg"></div>
+        <div class="about-sole-placeholder" style="position:absolute;inset:0;width:100%;height:100%;transform:none;">
+          <img src="uploads/Keromi Soles Instagram Posts.png" alt="Keromi Soles" style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.88;display:block;" />
+        </div>
+        <div class="about-visual-text">
+          <div class="big-num">SA<span>DC</span></div>
+          <p>Region-wide distribution network</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PRODUCTS
+══════════════════════════════════════════ -->
+<section id="products">
+  <div class="products-header">
+    <div>
+      <div class="section-label reveal">What We Supply</div>
+      <h2 class="section-title reveal reveal-delay-1">Our <em>Catalogue</em></h2>
+    </div>
+    <a href="#contact" class="btn btn-outline reveal">Request Full Catalogue</a>
+  </div>
+
+  <div class="products-grid">
+
+    <!-- Card 1 — Ladies -->
+    <div class="product-card reveal">
+      <div class="product-img">
+        <img src="uploads/ladies soles 1.jpeg" alt="Ladies Soles" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
+      </div>
+      <div class="product-body">
+        <div class="product-name">Ladies</div>
+        <div class="product-desc">Premium PVC soles crafted for women's footwear — elegant profiles, fashion-forward styles, and consistent sizing across the range.</div>
+        <div class="product-meta">
+          <div class="product-meta-row">
+            <span class="meta-key">Colours</span>
+            <div class="color-swatches">
+              <span class="swatch" style="background:#f5f0e8;" title="Beige"></span>
+              <span class="swatch" style="background:#ffffff;" title="White"></span>
+              <span class="swatch" style="background:#1a1a1a;" title="Black"></span>
+            </div>
+          </div>
+          <div style="font-size:0.75rem;color:var(--white-muted);margin-top:-4px;">Contact us for more colour options</div>
+          <div class="product-meta-row">
+            <span class="meta-key">MOQ</span>
+            <span class="meta-val">200 pairs per style</span>
+          </div>
+          <div style="font-size:0.72rem;color:var(--white-muted);font-style:italic;margin-top:-4px;">Subject to change without notice</div>
+          <div class="product-meta-row">
+            <span class="meta-key">Custom Print</span>
+            <span class="meta-val" style="color:#e8197a;">✓ Available</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-pink">Request a Quote</a>
+      </div>
+    </div>
+
+    <!-- Card 2 — Mens -->
+    <div class="product-card reveal reveal-delay-1">
+      <div class="product-img">
+        <img src="uploads/mens soles 3.jpeg" alt="Mens Soles" style="width:100%;height:100%;object-fit:cover;object-position:center;transform:rotate(90deg) scale(1.55);transform-origin:center;" />
+      </div>
+      <div class="product-body">
+        <div class="product-name">Mens</div>
+        <div class="product-desc">Heavy-duty PVC soles built for men's footwear — robust construction, superior grip, and durable performance for all conditions.</div>
+        <div class="product-meta">
+          <div class="product-meta-row">
+            <span class="meta-key">Colours</span>
+            <div class="color-swatches">
+              <span class="swatch" style="background:#f5f0e8;" title="Beige"></span>
+              <span class="swatch" style="background:#ffffff;" title="White"></span>
+              <span class="swatch" style="background:#1a1a1a;" title="Black"></span>
+            </div>
+          </div>
+          <div style="font-size:0.75rem;color:var(--white-muted);margin-top:-4px;">Contact us for more colour options</div>
+          <div class="product-meta-row">
+            <span class="meta-key">MOQ</span>
+            <span class="meta-val">200 pairs per style</span>
+          </div>
+          <div style="font-size:0.72rem;color:var(--white-muted);font-style:italic;margin-top:-4px;">Subject to change without notice</div>
+          <div class="product-meta-row">
+            <span class="meta-key">Custom Print</span>
+            <span class="meta-val" style="color:#e8197a;">✓ Available</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-pink">Request a Quote</a>
+      </div>
+    </div>
+
+    <!-- Card 3 — Kids -->
+    <div class="product-card reveal reveal-delay-2">
+      <div class="product-img">
+        <img src="uploads/kids soles 4.jpeg" alt="Kids Soles" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
+      </div>
+      <div class="product-body">
+        <div class="product-name">Kids</div>
+        <div class="product-desc">Lightweight, flexible PVC soles designed for children's footwear — safe, durable, and available in a full range of junior sizes and bright colours.</div>
+        <div class="product-meta">
+          <div class="product-meta-row">
+            <span class="meta-key">Colours</span>
+            <div class="color-swatches">
+              <span class="swatch" style="background:#f5f0e8;" title="Beige"></span>
+              <span class="swatch" style="background:#ffffff;" title="White"></span>
+              <span class="swatch" style="background:#1a1a1a;" title="Black"></span>
+            </div>
+          </div>
+          <div style="font-size:0.75rem;color:var(--white-muted);margin-top:-4px;">Contact us for more colour options</div>
+          <div class="product-meta-row">
+            <span class="meta-key">MOQ</span>
+            <span class="meta-val">200 pairs per style</span>
+          </div>
+          <div style="font-size:0.72rem;color:var(--white-muted);font-style:italic;margin-top:-4px;">Subject to change without notice</div>
+          <div class="product-meta-row">
+            <span class="meta-key">Custom Print</span>
+            <span class="meta-val" style="color:#e8197a;">✓ Available</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-pink">Request a Quote</a>
+      </div>
+    </div>
+
+    <!-- Card 4 — Custom OEM -->
+    <div class="product-card reveal reveal-delay-3">
+      <div class="product-img">
+        <img src="uploads/OEM 1.jpeg" alt="Custom OEM Sole" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
+      </div>
+      <div class="product-body">
+        <div class="product-name">Custom / OEM Sole</div>
+        <div class="product-desc">Fully bespoke manufacturing — your design, your brand embossing, your colourway. From mould creation to final delivery.</div>
+        <div class="product-meta">
+          <div class="product-meta-row">
+            <span class="meta-key">Colours</span>
+            <span class="meta-val">Any RAL / Pantone</span>
+          </div>
+          <div class="product-meta-row">
+            <span class="meta-key">MOQ</span>
+            <span class="meta-val">Discuss with our team</span>
+          </div>
+          <div class="product-meta-row">
+            <span class="meta-key">Branding</span>
+            <span class="meta-val" style="color:#e8197a;">✓ Logo emboss / print</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-pink">Request a Quote</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     MAP SECTION
+══════════════════════════════════════════ -->
+<section id="map-section">
+  <div class="map-intro">
+    <div class="section-label reveal">Our Reach</div>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">
+      Supplying Across<br><em>Southern Africa</em>
+    </h2>
+    <p class="section-sub reveal reveal-delay-2" style="text-align:center; margin:16px auto 0;">
+      From Johannesburg to Harare, Lusaka to Maputo — wherever footwear is made,
+      Keromi Soles delivers.
+    </p>
+  </div>
+
+  <div id="africa-map-container" class="reveal">
+    <svg id="africa-svg-map"></svg>
+    <div id="map-tooltip"></div>
+  </div>
+
+  <div class="map-legend reveal">
+    <div class="legend-item">
+      <div class="legend-dot" style="background:var(--navy-light); border:1px solid rgba(232,25,122,0.6);"></div>
+      <span>Primary markets (ZA, ZW, ZM, BW, MZ)</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:rgba(22,36,96,0.8); border:1px solid rgba(100,130,220,0.5);"></div>
+      <span>SADC region coverage</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<section id="testimonials">
+  <div class="testimonials-header">
+    <div class="section-label reveal">Client Voices</div>
+    <h2 class="section-title reveal reveal-delay-1">What Our <em>Clients Say</em></h2>
+  </div>
+
+  <div class="testimonials-slider reveal">
+    <div class="testimonials-track-wrap" style="overflow:hidden;border-radius:12px;">
+    <div class="testimonials-track">
+
+      <div class="testimonial-card active">
+        <span class="quote-mark">"</span>
+        <p class="testimonial-quote">
+          Keromi Soles transformed our production line. The consistency of their PVC soles is unmatched — 
+          every batch meets our spec without fail. Delivery to Harare is always on time.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">TM</div>
+          <div>
+            <div class="author-name">Tapiwa Mutasa</div>
+            <div class="author-role">Production Manager · ZW Footwear Co. 🇿🇼</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <span class="quote-mark">"</span>
+        <p class="testimonial-quote">
+          As a wholesaler, reliability is everything. Keromi delivers every time — 
+          competitive pricing and the ability to do custom OEM work makes them our sole supplier.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">NK</div>
+          <div>
+            <div class="author-name">Nomsa Khumalo</div>
+            <div class="author-role">Director · Khumalo Footwear Wholesale 🇿🇦</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <span class="quote-mark">"</span>
+        <p class="testimonial-quote">
+          We needed a supplier who understood African manufacturing realities. 
+          Keromi Soles not only delivered quality PVC soles, but offered genuine support throughout the order process.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">CS</div>
+          <div>
+            <div class="author-name">Chisomo Soko</div>
+            <div class="author-role">CEO · Soko Shoe Manufacturing 🇿🇲</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <span class="quote-mark">"</span>
+        <p class="testimonial-quote">
+          The custom branding on our soles sets us apart in the Botswana market. 
+          Keromi's OEM capability is a genuine competitive advantage for our brand.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">OP</div>
+          <div>
+            <div class="author-name">Onkabetse Phiri</div>
+            <div class="author-role">Brand Manager · Pula Footwear 🇧🇼</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end track -->
+    </div><!-- end track-wrap -->
+
+    <div class="slider-controls">
+      <button class="slider-btn" id="slider-prev">&#8592;</button>
+      <div class="slider-dots">
+        <div class="slider-dot active"></div>
+        <div class="slider-dot"></div>
+        <div class="slider-dot"></div>
+        <div class="slider-dot"></div>
+      </div>
+      <button class="slider-btn" id="slider-next">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-grid">
+    <div>
+      <div class="section-label reveal">Get In Touch</div>
+      <h2 class="section-title reveal reveal-delay-1">Ready to <em>Partner?</em></h2>
+      <p class="section-sub reveal reveal-delay-2">
+        Reach out via WhatsApp, email, or complete the quote form.
+        Our team responds within 24 hours.
+      </p>
+
+      <div class="contact-channels">
+        <a href="https://wa.me/27810849026" target="_blank" rel="noopener" class="channel-card reveal">
+          <div class="channel-icon whatsapp">💬</div>
+          <div>
+            <div class="channel-label">WhatsApp Us</div>
+            <div class="channel-value">Fastest response — chat directly with our team</div>
+          </div>
+        </a>
+        <a href="mailto:info@keromisoles.co.za" class="channel-card reveal reveal-delay-1">
+          <div class="channel-icon email">✉</div>
+          <div>
+            <div class="channel-label">Email</div>
+            <div class="channel-value">info@keromisoles.co.za</div>
+          </div>
+        </a>
+        <div class="channel-card reveal reveal-delay-2">
+          <div class="channel-icon phone">📍</div>
+          <div>
+            <div class="channel-label">Based In</div>
+            <div class="channel-value">South Africa · Serving the SADC Region</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap reveal">
+      <div class="form-title">Request a Quote</div>
+      <form id="quote-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" class="form-input" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Company Name *</label>
+            <input type="text" class="form-input" placeholder="Your company" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Country *</label>
+            <select class="form-select" required>
+              <option value="" disabled selected>Select your country</option>
+              <option>South Africa</option>
+              <option>Zimbabwe</option>
+              <option>Zambia</option>
+              <option>Botswana</option>
+              <option>Mozambique</option>
+              <option>Namibia</option>
+              <option>Malawi</option>
+              <option>Tanzania</option>
+              <option>Angola</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Product Interest *</label>
+            <select class="form-select" required>
+              <option value="" disabled selected>Select product type</option>
+              <option>Classic PVC Flat Sole</option>
+              <option>Chunky Wedge Sole</option>
+              <option>Sport &amp; Trainer Sole</option>
+              <option>Custom / OEM Sole</option>
+              <option>Multiple Products</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email *</label>
+            <input type="email" class="form-input" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone / WhatsApp</label>
+            <input type="tel" class="form-input" placeholder="+27 or country code" />
+          </div>
+          <div class="form-group full">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Tell us about your requirements — quantities, sizes, colours, custom branding, etc."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-pink form-submit">Submit Enquiry →</button>
+      </form>
+      <div class="form-success" id="form-success">
+        <div class="checkmark">✓</div>
+        <h3>Enquiry Received!</h3>
+        <p>Thank you — our team will be in touch within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="uploads/Keromi Soles Logo TRANSPARENT.png" alt="Keromi Soles" />
+      <span>Keromi Soles</span>
+    </div>
+    <div class="footer-copy">
+      © 2026 Keromi Soles. Premium PVC &amp; OEM shoe soles across Southern Africa.<br>
+      <a href="mailto:info@keromisoles.co.za">info@keromisoles.co.za</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     TWEAKS PANEL
+══════════════════════════════════════════ -->
+<div id="tweaks-panel" style="display:none; position:fixed; bottom:24px; right:24px; background:#ffffff; border:1px solid rgba(14,29,78,0.15); border-radius:12px; padding:20px 24px; z-index:9999; width:260px; box-shadow:0 8px 40px rgba(14,29,78,0.15);">
+  <div style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:1rem; letter-spacing:0.1em; text-transform:uppercase; color:#0e1d4e; margin-bottom:16px; border-bottom:1px solid rgba(14,29,78,0.08); padding-bottom:12px;">Tweaks</div>
+  <div style="display:flex; flex-direction:column; gap:14px;">
+    <div>
+      <label style="font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#6a7aae; display:block; margin-bottom:6px;">Accent Colour</label>
+      <input type="color" id="tweak-accent" value="#e8197a" style="width:100%; height:36px; border-radius:6px; border:1px solid rgba(14,29,78,0.15); background:transparent; cursor:pointer; padding:2px;" />
+    </div>
+    <div>
+      <label style="font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#6a7aae; display:block; margin-bottom:6px;">Hero Tagline</label>
+      <input type="text" id="tweak-tagline" value="Premium PVC soles engineered for Africa." style="width:100%; background:#f4f4f8; border:1px solid rgba(14,29,78,0.15); border-radius:6px; padding:8px 10px; color:#0e1d4e; font-family:'Barlow',sans-serif; font-size:0.82rem;" />
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/map.js"></script>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="80" fill="#1b1b24"/>
+    <ellipse cx="60" cy="40" rx="24" ry="14" fill="none" stroke="#e8197a" stroke-width="2.5"/>
+    <ellipse cx="60" cy="40" rx="18" ry="8" fill="none" stroke="#1f3480" stroke-width="1.5"/>
+    <text x="60" y="44" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="8" fill="#e8197a">K</text>
+  </svg>
+</template>
+
+</body>
+</html>
